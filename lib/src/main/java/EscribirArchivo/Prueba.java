@@ -8,17 +8,35 @@ import java.util.Scanner;
 public class Prueba {
 
 	public static void main(String[] args) {
-		String nombreArchivo = "movimientoDinero.txt";
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Ingrese la cantidad de dinero: ");
-		double dinero = sc.nextDouble();
 		
-		System.out.println("ingrese una descripcion:");
-		String descripcion = sc.next();
+		while(true) {
+			System.out.println("Escoja una opcion: ");
+			System.out.println("2) Para ingresar un nuevo movimiento de dinero. ");
+			System.out.println("0) Para salir. \n\n");
+			
+			int opcion = sc.nextInt();
 		
-		String linea = descripcion + ", " + dinero + "\n";
+			if(opcion == 0) {
+				sc.close();
+				return;
+			}
 		
-		agregarLinea(nombreArchivo, linea);
+			if(opcion == 2) {
+				String nombreArchivo = "movimientoDinero.txt";
+			
+				System.out.println("Ingrese la cantidad de dinero: ");
+				double dinero = sc.nextDouble();
+			
+				System.out.println("ingrese una descripcion:");
+				String descripcion = sc.next();
+			
+				String linea = descripcion + ", " + dinero + "\n";
+			
+				agregarLinea(nombreArchivo, linea);
+			}
+		}
+
 	}
 	
 	public static void pruebaLlaves() {
