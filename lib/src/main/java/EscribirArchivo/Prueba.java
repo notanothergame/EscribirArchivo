@@ -15,7 +15,10 @@ public class Prueba {
 		
 		System.out.println("ingrese una descripcion:");
 		String descripcion = sc.next();
-		escribirArchivo(nombreArchivo, descripcion);
+		
+		String linea = descripcion + ", " + dinero + "\n";
+		
+		agregarLinea(nombreArchivo, linea);
 	}
 	
 	public static void pruebaLlaves() {
@@ -27,10 +30,10 @@ public class Prueba {
 		//System.out.println(a); // daproblemas no est'a en el ambito de la variable
 	}
 	
-	public static void escribirArchivo(String nombreArchivo, String contenido) {
+	public static void agregarLinea(String nombreArchivo, String contenido) {
 		
 		try {
-			FileWriter fw = new FileWriter("escribeArchivo.txt");
+			FileWriter fw = new FileWriter("escribeArchivo.txt", true);
 			fw.write(contenido);
 			fw.close(); //que sucede si hay un error?
 		} catch(Exception e) {
